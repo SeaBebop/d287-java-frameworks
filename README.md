@@ -7,3 +7,6 @@ Welcome to Java Frameworks! This is an opportunity for students to implement use
 ### Task C: 
 - Color coded the buttons based on functionality in mainscreen.html
 - Changed the Titles to match the task at hand better in mainscreen.html
+### Task D:
+- Created an about page
+- Created a navbar that can go in and out of the about page
