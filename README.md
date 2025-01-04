@@ -10,3 +10,7 @@ Welcome to Java Frameworks! This is an opportunity for students to implement use
 ### Task D:
 - Created an about page
 - Created a navbar that can go in and out of the about page
+### Task E:
+- Updated the BootStrapData to initialize with parts and products
+- Added a condition to ensure no duplications are made on deployment
+### Task F:
