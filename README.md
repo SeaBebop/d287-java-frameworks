@@ -17,4 +17,5 @@ Welcome to Java Frameworks! This is an opportunity for students to implement use
 - In mainscreen.html, added a buy now button that triggers a controller
 - AddPartController.java now has a buy controller that decrements the inv value by one and checks if there's any values left
 - Created the template, confirmationbuyproduct.html
-### TaskG:
+- Created the template, failedbuyproduct.html
+### Task G:

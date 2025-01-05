@@ -117,7 +117,7 @@ public class AddProductController {
             product.setInv(product.getInv() - 1);
             productRepository.save(product);
         } else {
-            throw new RuntimeException("Product is out of stock");
+            return "failedbuyproduct";
         }
 
         // Redirect to confirmation page
