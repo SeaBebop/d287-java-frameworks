@@ -14,3 +14,7 @@ Welcome to Java Frameworks! This is an opportunity for students to implement use
 - Updated the BootStrapData to initialize with parts and products
 - Added a condition to ensure no duplications are made on deployment
 ### Task F:
+- In mainscreen.html, added a buy now button that triggers a controller
+- AddPartController.java now has a buy controller that decrements the inv value by one and checks if there's any values left
+- Created the template, confirmationbuyproduct.html
+### TaskG:
