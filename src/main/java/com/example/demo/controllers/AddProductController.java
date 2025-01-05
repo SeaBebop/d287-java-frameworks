@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
+import com.example.demo.repositories.ProductRepository;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +31,9 @@ public class AddProductController {
     private List<Part> theParts;
     private static Product product1;
     private Product product;
+    private ProductService productService;
+    @Autowired
+    private ProductRepository productRepository;
 
     @GetMapping("/showFormAddProduct")
     public String showFormAddPart(Model theModel) {
@@ -87,7 +90,6 @@ public class AddProductController {
             return "confirmationaddproduct";
         }
     }
-
     @GetMapping("/showProductFormForUpdate")
     public String showProductFormForUpdate(@RequestParam("productID") int theId, Model theModel) {
         theModel.addAttribute("parts", partService.findAll());
@@ -105,6 +107,21 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         //send over to our form
         return "productForm";
+    }
+    //Added new Form
+    @GetMapping("/showFormBuyProduct")
+    public String showFormBuyProduct(@RequestParam("productID") int theId, Model theModel) {
+        Product product = productRepository.findById((long)theId).orElseThrow(() -> new RuntimeException("Product not found"));
+
+        if (product.getInv() > 0) {
+            product.setInv(product.getInv() - 1);
+            productRepository.save(product);
+        } else {
+            throw new RuntimeException("Product is out of stock");
+        }
+
+        // Redirect to confirmation page
+        return "confirmationbuyproduct";
     }
 
     @GetMapping("/deleteproduct")
