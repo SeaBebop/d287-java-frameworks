@@ -8,26 +8,47 @@
 </head>
 <body>
 <h1>Inhouse Part Detail</h1>
-<form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST"}>
 
-<!-- Add hidden form field to handle update -->
+<form action="#" th:action="@{/showFormAddInPart}" th:object="${inhousepart}" method="POST">
+
+    <!-- Add hidden form field to handle update -->
     <p><input type="hidden" th:field="*{id}"/></p>
 
-<p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+    <!-- Name Field -->
+    <p>Name</p>
+    <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</p>
+    <!-- Price Field -->
+    <p>Price</p>
+    <p><input type="text" th:field="*{price}" placeholder="Price" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
 
-<p><input type="text" path="price" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
-<p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
+    <!-- Min Inventory Field -->
+    <p>Min Inventory</p>
+    <p><input type="text" th:field="*{invMin}" placeholder="InventoryMin" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('invMin')}" th:errors="*{invMin}">Inventory Error</p>
 
-<p><input type="text" path="inv" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+    <!-- Max Inventory Field -->
+    <p>Max Inventory</p>
+    <p><input type="text" th:field="*{invMax}" placeholder="InventoryMax" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('invMax')}" th:errors="*{invMax}">Inventory Error</p>
+
+    <!-- Inventory Field -->
+    <p>Inventory</p>
+    <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
 
+    <!-- Part ID Field -->
+    <p>Part ID</p>
     <p><input type="text" th:field="*{partId}" placeholder="Part ID" class="form-control mb-4 col-4"/></p>
 
-<p><input type="submit" value="Submit" /></p>
-</form>
-<p><errors path="price" cssClass=""error/><p>
+    <!-- Submit Button -->
+    <p><input type="submit" value="Submit" /></p>
 
-<a href="http://localhost:8080/">Link
-    to Main Screen</a>
+</form>
+
+<!-- Link to main page -->
+<a href="http://localhost:8080/">Link to Main Screen</a>
+
 </body>
 </html>

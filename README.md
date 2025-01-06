@@ -19,3 +19,6 @@ Welcome to Java Frameworks! This is an opportunity for students to implement use
 - Created the template, confirmationbuyproduct.html
 - Created the template, failedbuyproduct.html
 ### Task G:
+- Updated InhousePartForm.html to have error messages for everything, added min and max inventory
+- Added 2 validators for min and max
+- Improved the validators limitations for blank and for 0 inputs

@@ -65,6 +65,8 @@ public class BootStrapData implements CommandLineRunner {
         if( outsourcedPartRepository.count() == 0 && inhousePartRepository.count() == 0){
             InhousePart bike_body = new InhousePart();
             bike_body.setName("Bike Body");
+            bike_body.setInvMin(6);
+            bike_body.setInvMax(300);
             bike_body.setInv(200);
             bike_body.setPrice(10.0);
             bike_body.setId(1L);
@@ -73,6 +75,8 @@ public class BootStrapData implements CommandLineRunner {
             InhousePart wheels = new InhousePart();
             wheels.setName("Wheels");
             wheels.setInv(200);
+            wheels.setInvMin(6);
+            wheels.setInvMax(300);
             wheels.setPrice(10.0);
             wheels.setId(10L);
             inhousePartRepository.save(wheels);
@@ -80,6 +84,8 @@ public class BootStrapData implements CommandLineRunner {
             InhousePart chains = new InhousePart();
             chains.setName("Chains");
             chains.setInv(100);
+            chains.setInvMin(5);
+            chains.setInvMax(200);
             chains.setPrice(15.0);
             chains.setId(11L);
             inhousePartRepository.save(chains);
@@ -87,12 +93,16 @@ public class BootStrapData implements CommandLineRunner {
             InhousePart seats = new InhousePart();
             seats.setName("Seats");
             seats.setInv(100);
+            seats.setInvMin(5);
+            seats.setInvMax(200);
             seats.setPrice(20.0);
             seats.setId(12L);
             inhousePartRepository.save(seats);
 
             OutsourcedPart paint = new OutsourcedPart();
             paint.setName("Paint");
+            paint.setInvMin(1);
+            paint.setInvMax(100);
             paint.setInv(50);
             paint.setPrice(30.0);
             paint.setId(13L);
@@ -100,6 +110,8 @@ public class BootStrapData implements CommandLineRunner {
 
             OutsourcedPart merchandise_paint = new OutsourcedPart();
             merchandise_paint.setName("Merchandise Paint");
+            merchandise_paint.setInvMin(1);
+            merchandise_paint.setInvMax(50);
             merchandise_paint.setInv(30);
             merchandise_paint.setPrice(60.0);
             merchandise_paint.setId(14L);
@@ -107,6 +119,8 @@ public class BootStrapData implements CommandLineRunner {
 
             OutsourcedPart merchandise_stickers = new OutsourcedPart();
             merchandise_stickers.setName("Merchandise Stickers");
+            merchandise_stickers.setInvMin(1);
+            merchandise_stickers.setInvMax(50);
             merchandise_stickers.setInv(30);
             merchandise_stickers.setPrice(40.0);
             merchandise_stickers.setId(15L);
@@ -114,6 +128,8 @@ public class BootStrapData implements CommandLineRunner {
 
             OutsourcedPart custom_rims = new OutsourcedPart();
             custom_rims.setName("Custom Rims");
+            custom_rims.setInvMin(1);
+            custom_rims.setInvMax(50);
             custom_rims.setInv(30);
             custom_rims.setPrice(50.0);
             custom_rims.setId(16L);
@@ -121,6 +137,8 @@ public class BootStrapData implements CommandLineRunner {
 
             OutsourcedPart merchandise_airpumps = new OutsourcedPart();
             merchandise_airpumps.setName("Merchandise Airpumps");
+            merchandise_airpumps.setInvMin(1);
+            merchandise_airpumps.setInvMax(50);
             merchandise_airpumps.setInv(30);
             merchandise_airpumps.setPrice(55.0);
             merchandise_airpumps.setId(17L);
@@ -145,6 +163,8 @@ public class BootStrapData implements CommandLineRunner {
             productRepository.save(disney_unicycle);
             productRepository.save(marathon_bicycle);
         }
+
+
 
 
         System.out.println("Started in Bootstrap");
